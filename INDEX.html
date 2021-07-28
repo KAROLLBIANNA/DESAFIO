@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>BANCO UTAÍ</title>
+</head>
+<header class="header">
+    <h1 id="titulo"><br />Cadastro de Acessibilidade - BANCO UTAÍ</h1>
+  
+</header>
+
+<body>
+    <form onsubmit="return cadastro()">
+        <table>
+			<tr> <!-- cria uma linha na tabela -->
+				<td>  <!-- cria uma coluna na tabela -->
+					<div class="campo">
+						<label name="nome" for="nome"><strong>Nome:</strong></label>
+						<input type="text" size="70" name="txtNome" id="txtNome" placeholder="Digite seu nome">
+					</div>
+				</td>
+				<td class="espacoColuna"></td>
+				<td>
+					<div class="campo">
+						<label for="CPF"><strong>CPF:</strong></label>
+						<input type="text" id="txtCPF" name="txtCPF" placeholder="Insira seu CPF" onkeypress="mascara(this, '###.###.###-##')">
+					</div>
+				</td>
+				<td class="espacoColuna"></td>
+				<td>
+					<div class="campo">
+					<label><strong>RG:</strong></label>
+					<input type="text" name="txtRG" id="txtRG" placeholder="Insira seu RG" >
+					</div>
+				</td>
+            
+			</tr>
+			<tr>
+				<td>
+					<div class="campo">
+						<label><strong>Endereço:</strong></label>
+						<input type="text" size="70" name="txtEndereco" id="txtEndereco" placeholder="Insira seu endereço (Ex.:rua, avenida, alameda)"> <br />
+					</div>
+				</td>
+				<td class="espacoColuna"></td>
+				<td>
+					<div class="campo">
+						<label><strong>Número:</strong></label>
+						<input type="text" name="txtNumero" id="txtNumero" placeholder="Número">
+					</div>
+				</td>
+				<td class="espacoColuna"></td>
+				<td>
+					<div class="campo">
+						<label><strong>Bairro:</strong></label>
+						<input type="text" name="txtBairro" id="txtBairro" placeholder="Digite seu bairro">
+					</div>
+					
+				</td>	
+			</tr>
+			<tr> <!-- cria uma linha na tabela -->
+				<td>  <!-- cria uma coluna na tabela -->
+					 <div class="campo">
+						<label><strong>Cidade:</strong></label>
+						<input type="text" size="70" name="txtCidade" id="txtCidade" placeholder="Digite a cidade de endereço">
+					</div>
+					<div class="campo">
+						<label for="CEP"><strong>CEP:</strong></label>
+						<input type="text" size="15" name="txtCEP" id="txtCEP" onkeypress="mascara(this, '#####-###')" title="Digite um formato de CEP válido!" placeholder="00000-000" />
+					</div>
+				</td>
+				<td class="espacoColuna"></td>
+				<td>
+					<div class="campo">
+						<label name="telefone" for="Telefone"><strong>Telefone Fixo:</strong></label>
+						<input type="text" name="txtTelefone" id="txtTelefone" title="Digite um telefone no formato válido!" onkeypress="mascara(this, '## ####-####')" placeholder="00 0000-0000" />
+					</div>
+				</td>
+				<td class="espacoColuna"></td>
+				<td>
+					 <div class="campo">
+						<label name="celular" for="celular"><strong>Celular:</strong></label>	
+						<input type="text" name="txtCelular" id="txtCelular" title="Digite um telefone no formato adequado!" onkeypress="mascara(this, '## #####-####')" placeholder="00 00000-0000" />
+					</div>
+				</td>
+            
+			</tr>
+			<tr>
+				<td>
+					 <fieldset class="grupo2">
+						<div id="check">
+							<label for="acessibilidade"><strong>Maque as opções de acessibilidade(s) que você utiliza:</strong></label><br><br>
+
+							<input type="checkbox" name="chkAcessibilidade" id="chkAcessibilidade" value="Legenda">
+							<label for="acessibilidade1">Legenda</label>
+
+							<input type="checkbox" name="chkAcessibilidade" id="chkAcessibilidade" value="Leitor">
+							<label for="acessibilidade2">Leitor</label>
+
+							<input type="checkbox" name="chkAcessibilidade" id="chkAcessibilidade" value="Lupa">
+							<label for="acessibilidade3">Lupa</label>
+
+							<input type="checkbox" name="chkAcessibilidade" id="chkAcessibilidade" value="Mouse Ergonômico">
+							<label for="acessibilidade4">Mouse Ergonômico</label>
+						</div>
+					</fieldset>
+				</td>
+				<td class="espacoColuna"></td>
+				<td>
+					<div class="campo">
+						<label for="selectDeficiencia"><strong>Deficiencia:</strong></label>
+						<select  id="selectDeficiencia" name="selectDeficiencia">
+							<option selected disabled value="">Escolha uma das opções:</option>
+							<option>Auditiva</option>
+							<option>Física</option>
+							<option>Múltipla</option>
+							<option>Visual</option>
+						</select>
+					</div>    
+				</td>
+				<td class="espacoColuna"></td>
+				<td>
+					<div class="campo">
+						<label><strong>Sexo:</strong></label>
+						<label>
+							<input type="radio" name="rdGenero" id="rdGenero" value="feminino">Feminino
+						</label>
+						<label>
+							<input type="radio" name="rdGenero" id="rdGenero" value="masculino">Masculino
+						</label>
+					</div>
+				</td>
+				
+			</tr>
+		</table>
+        <div class="campo">
+            <br />
+            <label><strong>Descreva com detalhes sua rotina de trabalho inclusiva:</strong></label><br>
+            <textarea rows="4" cols="100" id="txtRotina_inclusiva" name="txtRotina_inclusiva" placeholder="Nos conte com mais detalhes sobre suas necessidades inclusivas no ambiente de trabalho"></textarea>
+        </div>
+		<table>
+			<tr>
+				<td>
+					<input class="botao" type="submit" id="botaoEnviar" name="botaoEnviar" value="Enviar" />
+				</td>
+				<td>
+					<br />
+				</td>
+				<td>
+					<input class="botao" type="button" id="botaoLimpar" name="botaoLimpar" value="Limpar" onclick="funcaoLimpar()" />
+				</td>
+			</tr>
+		</table>
+    </form>
+</body>
+	<footer>
+        <div class="footer"> 	
+		<strong>&copy; TODOS OS DIREITOS RESERVADOS | 2021 </strong>
+	</footer>
+	</div>
+</html>
